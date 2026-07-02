@@ -131,7 +131,7 @@ export const Hero = ({ settings }: HeroProps) => {
                 </div>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

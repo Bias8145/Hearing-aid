@@ -5,8 +5,7 @@ import { toast } from 'react-hot-toast';
 import { 
   Plus, Settings, Package, LogOut, Trash2, Edit3, 
   Globe, Phone, MapPin, Upload, X, Loader2, 
-  ShoppingBag, Instagram, Facebook, Music2, Eye,
-  Save, Image as ImageIcon, Type, Medal, ShieldCheck
+  Eye, Save, Image as ImageIcon, Type, ShieldCheck
 } from 'lucide-react';
 import { Setting } from '../hooks/useSettings';
 import { Product } from '../App';
