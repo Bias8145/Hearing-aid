@@ -15,7 +15,7 @@ export const Navbar = ({ settings, theme, toggleTheme }: NavbarProps) => {
   const whatsappNumber = settings.find(s => s.key === 'whatsapp_number')?.value || "6281234567890";
 
   return (
-    <nav className="sticky top-0 z-[100] bg-white/70 dark:bg-[#020617]/70 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800/50 transition-all duration-500">
+    <nav className="sticky top-0 z-[100] bg-white/80 dark:bg-[#020617]/80 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800/50 transition-all duration-500">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 md:h-24">
           <Link to="/" className="flex items-center gap-3 group">
@@ -23,26 +23,22 @@ export const Navbar = ({ settings, theme, toggleTheme }: NavbarProps) => {
               <Ear className="w-6 h-6 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl md:text-2xl font-black tracking-tighter text-slate-900 dark:text-white leading-none">
+              <span className="text-xl md:text-2xl font-black tracking-tighter text-slate-900 dark:text-white leading-none uppercase">
                 HEAR<span className="text-blue-600">PREMIUM</span>
               </span>
-              <span className="text-[8px] font-black uppercase tracking-[0.3em] text-slate-400 mt-1">Professional Care</span>
+              <span className="text-[8px] font-black uppercase tracking-[0.3em] text-slate-400 mt-1">Professional Hearing Solutions</span>
             </div>
           </Link>
           
           <div className="hidden lg:flex items-center gap-12 text-[10px] font-black uppercase tracking-[0.25em] text-slate-400 dark:text-slate-500">
             <a href="#catalog" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative group">
-              Katalog
+              Katalog Produk
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
             </a>
             <a href="#why-us" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative group">
-              Keunggulan
+              Standar Layanan
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
             </a>
-            <Link to="/login" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative group">
-              Admin
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
-            </Link>
           </div>
 
           <div className="flex items-center gap-3 md:gap-5">
@@ -58,10 +54,10 @@ export const Navbar = ({ settings, theme, toggleTheme }: NavbarProps) => {
               href={`https://wa.me/${whatsappNumber}`} 
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-3 bg-slate-900 dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700 text-white px-6 md:px-8 py-3.5 md:py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all shadow-xl shadow-slate-200 dark:shadow-blue-900/20 active:scale-95"
+              className="flex items-center gap-3 bg-slate-900 dark:bg-blue-600 hover:bg-blue-600 dark:hover:bg-blue-700 text-white px-6 md:px-8 py-3.5 md:py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all shadow-xl shadow-slate-200 dark:shadow-blue-900/20 active:scale-95"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Konsultasi</span>
+              <span>Konsultasi Ahli</span>
             </a>
             
             <button 
@@ -89,14 +85,11 @@ export const Navbar = ({ settings, theme, toggleTheme }: NavbarProps) => {
               <a href="#why-us" onClick={() => setIsOpen(false)} className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center justify-between">
                 Standar Layanan <Sun size={14} />
               </a>
-              <Link to="/login" onClick={() => setIsOpen(false)} className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center justify-between">
-                Panel Admin <X size={14} />
-              </Link>
               <a 
                 href={`https://wa.me/${whatsappNumber}`}
                 className="bg-blue-600 text-white py-5 rounded-2xl text-center shadow-lg shadow-blue-100 dark:shadow-blue-900/20"
               >
-                Konsultasi Gratis
+                Konsultasi Sekarang
               </a>
             </div>
           </motion.div>
