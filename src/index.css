@@ -5,10 +5,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
-  .perspective-1000 {
-    perspective: 1000px;
+  body {
+    @apply bg-[#f8fafc] dark:bg-[#020617] text-slate-900 dark:text-slate-100;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tighter;
   }
 }
 
