@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingBag, MessageCircle, Zap, CheckCircle2 } from 'lucide-react';
+import { MessageCircle, Zap, CheckCircle2 } from 'lucide-react';
 import { Product } from '../App';
 import { ProductSlider } from './ProductSlider';
 
@@ -23,70 +23,56 @@ export const ProductCard = ({ product, whatsappNumber }: ProductCardProps) => {
 
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="group bg-white rounded-[4rem] overflow-hidden border border-slate-50 shadow-sm hover:shadow-[0_50px_100px_-30px_rgba(0,0,0,0.1)] transition-all duration-700"
+      className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500"
     >
       <ProductSlider images={product.image_urls} />
 
-      <div className="p-10 md:p-12">
-        <div className="flex justify-between items-start mb-6">
-          <div className="bg-blue-50 text-blue-600 text-[9px] font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full border border-blue-100">
+      <div className="p-6 md:p-8">
+        <div className="flex justify-between items-start mb-4">
+          <div className="bg-blue-50 text-blue-600 text-[8px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-blue-100">
             {product.brand}
           </div>
-          <div className="bg-red-500 text-white text-[9px] font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full shadow-lg flex items-center gap-2">
-            <Zap size={12} fill="currentColor" /> Hemat {discountPercent}%
+          <div className="bg-red-500 text-white text-[8px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+            <Zap size={10} fill="currentColor" /> -{discountPercent}%
           </div>
         </div>
 
-        <h3 className="text-3xl font-black text-slate-900 mb-6 tracking-tighter group-hover:text-blue-600 transition-colors duration-500">
+        <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors">
           {product.name}
         </h3>
         
-        <div className="flex flex-wrap gap-2 mb-10">
-          {product.features.slice(0, 3).map((feature, i) => (
-            <span key={i} className="text-[9px] font-black text-slate-400 bg-slate-50 px-4 py-2 rounded-xl border border-slate-100 uppercase tracking-widest">
+        <div className="flex flex-wrap gap-1.5 mb-6">
+          {product.features.slice(0, 2).map((feature, i) => (
+            <span key={i} className="text-[8px] font-bold text-slate-400 bg-slate-50 px-3 py-1 rounded-lg border border-slate-100 uppercase tracking-wider">
               {feature}
             </span>
           ))}
         </div>
 
-        <div className="bg-[#f8fafc] rounded-[2.5rem] p-8 mb-10 border border-slate-50">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-[9px] text-slate-400 font-black uppercase tracking-[0.2em]">Hearing Center</span>
-            <span className="text-sm text-slate-300 line-through font-bold">{formatPrice(product.market_price)}</span>
+        <div className="bg-slate-50 rounded-2xl p-5 mb-6 border border-slate-100">
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-[8px] text-slate-400 font-black uppercase tracking-wider">Market Price</span>
+            <span className="text-xs text-slate-300 line-through font-bold">{formatPrice(product.market_price)}</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-[10px] text-blue-600 font-black uppercase tracking-[0.2em]">HearPremium</span>
-            <span className="text-4xl font-black text-slate-900 tracking-tighter">{formatPrice(product.our_price)}</span>
-          </div>
-          <div className="mt-6 pt-6 border-t border-slate-200/50 text-[10px] text-green-600 font-black uppercase tracking-[0.2em] flex items-center gap-2">
-            <CheckCircle2 size={16} /> Anda Berhemat {formatPrice(savings)}
+            <span className="text-[9px] text-blue-600 font-black uppercase tracking-wider">HearPremium</span>
+            <span className="text-2xl font-black text-slate-900 tracking-tight">{formatPrice(product.our_price)}</span>
           </div>
         </div>
 
-        {/* Marketplace Grid */}
-        <div className="grid grid-cols-2 gap-3 mb-6">
+        {/* Compact Marketplace Links */}
+        <div className="grid grid-cols-2 gap-2 mb-4">
           {product.shopee_url && (
-            <a href={product.shopee_url} target="_blank" className="flex items-center justify-center gap-2 bg-[#EE4D2D] text-white py-5 rounded-[1.5rem] text-[9px] font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-orange-100">
+            <a href={product.shopee_url} target="_blank" className="flex items-center justify-center bg-[#EE4D2D]/10 text-[#EE4D2D] py-3 rounded-xl text-[8px] font-black uppercase tracking-widest hover:bg-[#EE4D2D] hover:text-white transition-all">
               Shopee
             </a>
           )}
           {product.tokopedia_url && (
-            <a href={product.tokopedia_url} target="_blank" className="flex items-center justify-center gap-2 bg-[#03AC0E] text-white py-5 rounded-[1.5rem] text-[9px] font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-green-100">
+            <a href={product.tokopedia_url} target="_blank" className="flex items-center justify-center bg-[#03AC0E]/10 text-[#03AC0E] py-3 rounded-xl text-[8px] font-black uppercase tracking-widest hover:bg-[#03AC0E] hover:text-white transition-all">
               Tokopedia
-            </a>
-          )}
-          {product.blibli_url && (
-            <a href={product.blibli_url} target="_blank" className="flex items-center justify-center gap-2 bg-[#0095DA] text-white py-5 rounded-[1.5rem] text-[9px] font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-blue-100">
-              Blibli
-            </a>
-          )}
-          {product.tiktok_shop_url && (
-            <a href={product.tiktok_shop_url} target="_blank" className="flex items-center justify-center gap-2 bg-black text-white py-5 rounded-[1.5rem] text-[9px] font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-lg shadow-slate-200">
-              TikTok Shop
             </a>
           )}
         </div>
@@ -94,9 +80,9 @@ export const ProductCard = ({ product, whatsappNumber }: ProductCardProps) => {
         <a 
           href={`https://wa.me/${whatsappNumber}?text=Halo, saya tertarik dengan ${product.name}`}
           target="_blank" 
-          className="w-full flex items-center justify-center gap-4 bg-slate-900 text-white py-6 rounded-[2rem] text-[10px] font-black uppercase tracking-[0.3em] hover:bg-blue-600 transition-all duration-500 shadow-2xl shadow-slate-200"
+          className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white py-4 rounded-2xl text-[9px] font-black uppercase tracking-widest hover:bg-blue-600 transition-all shadow-lg"
         >
-          <MessageCircle size={20} /> Konsultasi & Pesan
+          <MessageCircle size={16} /> Konsultasi Sekarang
         </a>
       </div>
     </motion.div>
