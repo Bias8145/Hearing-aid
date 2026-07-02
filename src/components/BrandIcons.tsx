@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Official-style SVG icons for marketplaces
+// Official-style SVG icons for marketplaces and social media
 export const ShopeeIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" className={className} fill="currentColor">
     <path d="M19.1 8.3h-2.1c-.2-2.3-2.1-4.1-4.4-4.1s-4.2 1.8-4.4 4.1H6.1c-1.1 0-2 .9-2 2v8.2c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2v-8.2c0-1.1-.9-2-2-2zm-6.5-2.6c1.5 0 2.7 1.1 2.9 2.6H9.7c.2-1.5 1.4-2.6 2.9-2.6zm6.5 12.8H6.1v-8.2h2.1v1.5c0 .4.3.7.7.7s.7-.3.7-.7v-1.5h4.8v1.5c0 .4.3.7.7.7s.7-.3.7-.7v-1.5h2.1v8.2z"/>

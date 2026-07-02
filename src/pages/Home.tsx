@@ -42,8 +42,8 @@ const Home = ({ settings }: HomeProps) => {
             <div className="inline-flex items-center gap-2 bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 px-3 py-1.5 rounded-full text-[8px] font-black uppercase tracking-[0.2em] mb-5 border border-slate-200 dark:border-slate-700">
               <ShieldCheck size={12} className="text-blue-600" /> Komitmen Profesional
             </div>
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter uppercase">INTEGRITAS LAYANAN KAMI</h2>
-            <p className="text-slate-400 dark:text-slate-500 text-sm md:text-lg font-medium leading-relaxed">Kami mengedepankan transparansi dalam setiap aspek, memastikan Anda mendapatkan solusi pendengaran yang tepat dengan nilai yang sebanding.</p>
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter uppercase">STANDAR LAYANAN KAMI</h2>
+            <p className="text-slate-400 dark:text-slate-500 text-sm md:text-lg font-medium leading-relaxed">Kami mengedepankan integritas dalam setiap aspek, memastikan Anda mendapatkan solusi pendengaran yang tepat dengan transparansi nilai yang nyata.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
@@ -51,7 +51,7 @@ const Home = ({ settings }: HomeProps) => {
               {
                 icon: <Medal className="w-7 h-7 text-blue-600 dark:text-blue-400" />,
                 title: "Kualitas Terstandarisasi",
-                desc: "Seluruh perangkat kami melalui kurasi ketat untuk memastikan performa akustik yang optimal sesuai standar medis.",
+                desc: "Seluruh perangkat kami melalui kurasi ketat untuk memastikan performa akustik yang optimal sesuai standar medis global.",
                 color: "bg-blue-50/50 dark:bg-blue-900/10"
               },
               {
@@ -63,7 +63,7 @@ const Home = ({ settings }: HomeProps) => {
               {
                 icon: <HeartPulse className="w-7 h-7 text-red-500 dark:text-red-400" />,
                 title: "Dukungan Berkelanjutan",
-                desc: "Layanan purna jual dan bantuan teknis profesional untuk memastikan kenyamanan mendengar Anda tetap terjaga.",
+                desc: "Layanan purna jual dan bantuan teknis profesional untuk memastikan kenyamanan mendengar Anda tetap terjaga setiap saat.",
                 color: "bg-red-50/50 dark:bg-red-900/10"
               }
             ].map((item, idx) => (
@@ -92,7 +92,7 @@ const Home = ({ settings }: HomeProps) => {
             Katalog Solusi Pendengaran
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter uppercase">PILIHAN PERANGKAT TERBAIK</h2>
-          <p className="text-slate-400 dark:text-slate-500 max-w-xl text-sm md:text-lg font-medium leading-relaxed mx-auto lg:mx-0">Kurasi perangkat dengan fitur esensial untuk mendukung produktivitas dan kualitas hidup Anda.</p>
+          <p className="text-slate-400 dark:text-slate-500 max-w-xl text-sm md:text-lg font-medium leading-relaxed mx-auto lg:mx-0">Kurasi perangkat dengan fitur esensial untuk mendukung produktivitas dan kualitas hidup Anda secara optimal.</p>
         </div>
 
         {loading ? (
@@ -120,7 +120,7 @@ const Home = ({ settings }: HomeProps) => {
         <div className="max-w-3xl mx-auto px-6 relative z-10 text-center text-white">
           <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter uppercase leading-tight">DAPATKAN <br /> ANALISIS PROFESIONAL</h2>
           <p className="text-slate-400 dark:text-slate-500 text-sm md:text-xl mb-12 font-medium leading-relaxed max-w-xl mx-auto">
-            Diskusikan kebutuhan pendengaran Anda dengan tim ahli kami untuk mendapatkan rekomendasi yang paling sesuai dengan profil klinis Anda.
+            Diskusikan kebutuhan pendengaran Anda dengan tim ahli kami untuk mendapatkan rekomendasi yang paling sesuai dengan profil klinis dan gaya hidup Anda.
           </p>
           <a 
             href={`https://wa.me/${whatsappNumber}`}

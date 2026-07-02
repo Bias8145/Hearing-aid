@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Hand, Maximize2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Hand } from 'lucide-react';
 
 interface ProductSliderProps {
   images: string[];
@@ -10,25 +10,34 @@ export const ProductSlider = ({ images }: ProductSliderProps) => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [showHint, setShowHint] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowHint(false), 4000);
-    return () => clearTimeout(timer);
-  }, []);
+  const [isPaused, setIsPaused] = useState(false);
 
   const slideImages = images && images.length > 0 
     ? images 
     : ['https://images.unsplash.com/photo-1590611380053-da6447021fbb?q=80&w=800'];
 
-  const nextStep = () => {
+  const nextStep = useCallback(() => {
     setDirection(1);
     setIndex((prev) => (prev + 1) % slideImages.length);
-  };
+  }, [slideImages.length]);
 
-  const prevStep = () => {
+  const prevStep = useCallback(() => {
     setDirection(-1);
     setIndex((prev) => (prev - 1 + slideImages.length) % slideImages.length);
-  };
+  }, [slideImages.length]);
+
+  // Auto-play logic
+  useEffect(() => {
+    if (slideImages.length <= 1 || isPaused) return;
+    
+    const timer = setInterval(nextStep, 5000);
+    return () => clearInterval(timer);
+  }, [nextStep, slideImages.length, isPaused]);
+
+  useEffect(() => {
+    const hintTimer = setTimeout(() => setShowHint(false), 4000);
+    return () => clearTimeout(hintTimer);
+  }, []);
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -48,7 +57,11 @@ export const ProductSlider = ({ images }: ProductSliderProps) => {
   };
 
   return (
-    <div className="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-950 group">
+    <div 
+      className="relative aspect-square overflow-hidden bg-slate-100 dark:bg-slate-950 group"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <AnimatePresence initial={false} custom={direction} mode="popLayout">
         <motion.img
           key={index}
@@ -65,15 +78,17 @@ export const ProductSlider = ({ images }: ProductSliderProps) => {
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.4}
+          onDragStart={() => setIsPaused(true)}
           onDragEnd={(_, info) => {
             if (info.offset.x > 70) prevStep();
             else if (info.offset.x < -70) nextStep();
+            setIsPaused(false);
           }}
           className="absolute inset-0 w-full h-full object-cover cursor-grab active:cursor-grabbing"
         />
       </AnimatePresence>
 
-      {/* Swipe Hint - More Professional Editorial Style */}
+      {/* Swipe Hint */}
       <AnimatePresence>
         {showHint && slideImages.length > 1 && (
           <motion.div 
