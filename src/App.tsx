@@ -20,6 +20,8 @@ export interface Product {
   image_urls: string[];
   shopee_url: string;
   tokopedia_url: string;
+  blibli_url: string;
+  tiktok_shop_url: string;
   created_at: string;
 }
 
@@ -28,10 +30,16 @@ const App = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50">
-        <div className="flex flex-col items-center gap-4">
-          <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-slate-400 font-bold animate-pulse">Memuat HearPremium...</p>
+      <div className="min-h-screen flex items-center justify-center bg-[#f8fafc]">
+        <div className="flex flex-col items-center gap-6">
+          <div className="relative w-16 h-16">
+            <div className="absolute inset-0 border-4 border-blue-100 rounded-full"></div>
+            <div className="absolute inset-0 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+          </div>
+          <div className="text-center">
+            <p className="text-slate-900 font-black text-xs uppercase tracking-[0.3em]">HearPremium</p>
+            <p className="text-slate-400 text-[10px] font-bold mt-1">Sistem Sedang Memuat...</p>
+          </div>
         </div>
       </div>
     );
@@ -41,14 +49,17 @@ const App = () => {
 
   return (
     <Router>
-      <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+      <div className="min-h-screen bg-[#f8fafc] font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
         <Toaster position="top-center" toastOptions={{
           style: {
-            borderRadius: '1rem',
+            borderRadius: '1.5rem',
             background: '#0f172a',
             color: '#fff',
-            fontSize: '0.875rem',
-            fontWeight: '600'
+            fontSize: '0.75rem',
+            fontWeight: '900',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            padding: '1rem 2rem'
           }
         }} />
         
@@ -68,12 +79,12 @@ const App = () => {
           href={`https://wa.me/${whatsappNumber.replace(/\D/g, '')}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-8 right-8 z-[100] bg-green-500 text-white p-5 rounded-full shadow-[0_20px_50px_rgba(34,197,94,0.4)] hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center group"
+          className="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-5 rounded-[2rem] shadow-[0_20px_50px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all duration-500 flex items-center justify-center group"
           aria-label="Chat on WhatsApp"
         >
-          <MessageCircle size={32} />
-          <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 font-bold whitespace-nowrap text-sm">
-            Tanya Konsultan
+          <MessageCircle size={28} fill="currentColor" />
+          <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-4 transition-all duration-500 font-black whitespace-nowrap text-xs uppercase tracking-widest">
+            Konsultasi Ahli
           </span>
         </a>
       </div>

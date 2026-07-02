@@ -41,28 +41,28 @@ const Home = ({ settings }: HomeProps) => {
       <section id="why-us" className="py-20 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Mengapa Memilih Kami?</h2>
-            <p className="text-slate-500">Kami memangkas biaya sewa gedung mewah dan iklan mahal untuk memberikan harga terbaik bagi pendengaran Anda.</p>
+            <h2 className="text-3xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Mengapa Memilih Kami?</h2>
+            <p className="text-slate-500 font-medium">Kami menghadirkan teknologi pendengaran terbaik dunia langsung ke tangan Anda dengan transparansi harga yang nyata.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               {
                 icon: <ShieldCheck className="w-8 h-8 text-blue-600" />,
-                title: "100% Original",
-                desc: "Semua produk kami dijamin asli, baru, dan tersegel dari pabrik brand ternama dunia.",
+                title: "Kualitas Premium",
+                desc: "Hanya menyediakan perangkat dengan teknologi terbaru yang telah teruji secara klinis.",
                 color: "bg-blue-50"
               },
               {
                 icon: <Zap className="w-8 h-8 text-amber-600" />,
-                title: "Harga Pabrik",
-                desc: "Hemat hingga 70% dibandingkan Hearing Center konvensional tanpa mengurangi kualitas teknologi.",
+                title: "Efisiensi Biaya",
+                desc: "Hemat jutaan rupiah dengan model bisnis langsung tanpa perantara yang mahal.",
                 color: "bg-amber-50"
               },
               {
                 icon: <CheckCircle2 className="w-8 h-8 text-green-600" />,
-                title: "Dukungan Ahli",
-                desc: "Konsultasi gratis dan panduan teknis seumur hidup untuk memastikan kenyamanan Anda.",
+                title: "Layanan Profesional",
+                desc: "Dukungan teknis dan konsultasi berkelanjutan untuk memastikan kenyamanan maksimal Anda.",
                 color: "bg-green-50"
               }
             ].map((item, idx) => (
@@ -74,11 +74,11 @@ const Home = ({ settings }: HomeProps) => {
                 transition={{ delay: idx * 0.1 }}
                 className="flex flex-col items-center text-center group"
               >
-                <div className={`${item.color} p-5 rounded-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`${item.color} p-6 rounded-[2rem] mb-8 group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-slate-500 leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl font-black mb-4 uppercase tracking-tight">{item.title}</h3>
+                <p className="text-slate-500 leading-relaxed font-medium">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -89,22 +89,22 @@ const Home = ({ settings }: HomeProps) => {
       <section id="catalog" className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-block bg-blue-600 text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-full mb-4">
-              Premium Catalog 2025
+            <div className="inline-block bg-blue-600 text-white text-[10px] font-black uppercase tracking-[0.3em] px-4 py-2 rounded-full mb-6">
+              Katalog Premium 2025
             </div>
-            <h2 className="text-4xl font-black text-slate-900 mb-4">Koleksi Alat Bantu Dengar</h2>
-            <p className="text-slate-500 max-w-xl">Pilihan teknologi terbaik dari Phonak, Oticon, dan Signia dengan fitur Noise Cancellation dan Bluetooth terkini.</p>
+            <h2 className="text-5xl font-black text-slate-900 mb-6 tracking-tighter">Koleksi Teknologi Pendengaran</h2>
+            <p className="text-slate-500 max-w-xl font-medium">Pilihan perangkat tercanggih dengan fitur Noise Cancellation, Bluetooth, dan Rechargeable Battery.</p>
           </div>
         </div>
 
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-[2rem] p-8 border border-slate-100 animate-pulse">
-                <div className="w-full aspect-square bg-slate-100 rounded-2xl mb-6"></div>
-                <div className="h-6 bg-slate-100 rounded w-3/4 mb-4"></div>
-                <div className="h-4 bg-slate-100 rounded w-1/2 mb-8"></div>
-                <div className="h-12 bg-slate-100 rounded w-full"></div>
+              <div key={i} className="bg-white rounded-[4rem] p-12 border border-slate-100 animate-pulse">
+                <div className="w-full aspect-square bg-slate-50 rounded-[3rem] mb-8"></div>
+                <div className="h-8 bg-slate-50 rounded-xl w-3/4 mb-6"></div>
+                <div className="h-4 bg-slate-50 rounded-lg w-1/2 mb-10"></div>
+                <div className="h-16 bg-slate-50 rounded-2xl w-full"></div>
               </div>
             ))}
           </div>
@@ -118,20 +118,21 @@ const Home = ({ settings }: HomeProps) => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-blue-600 relative overflow-hidden">
+      <section className="py-24 bg-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#2563eb 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-black mb-8">Masih Ragu Memilih?</h2>
-          <p className="text-blue-100 text-lg mb-12 max-w-2xl mx-auto">
-            Konsultasikan kebutuhan pendengaran Anda dengan tim ahli kami secara gratis melalui WhatsApp. Kami siap membantu Anda menemukan solusi terbaik.
+          <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter">Ingin Konsultasi Dulu?</h2>
+          <p className="text-slate-400 text-xl mb-16 max-w-2xl mx-auto font-medium">
+            Tim ahli kami siap membantu Anda memilih perangkat yang paling sesuai dengan profil pendengaran dan gaya hidup Anda. Gratis tanpa biaya.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <a 
               href={`https://wa.me/${whatsappNumber}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-white text-blue-600 px-10 py-5 rounded-2xl font-black text-xl hover:bg-blue-50 transition-all shadow-2xl flex items-center justify-center gap-3"
+              className="w-full sm:w-auto bg-blue-600 text-white px-12 py-6 rounded-[2rem] font-black text-xl hover:bg-blue-700 transition-all shadow-[0_20px_40px_-10px_rgba(37,99,235,0.4)] flex items-center justify-center gap-4 group"
             >
-              <MessageCircle size={24} /> Chat WhatsApp Sekarang
+              <MessageCircle size={28} /> Chat WhatsApp Sekarang
             </a>
           </div>
         </div>

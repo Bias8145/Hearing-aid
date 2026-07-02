@@ -31,21 +31,21 @@ export const Hero = ({ settings }: HeroProps) => {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 text-blue-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-8"
             >
-              <TrendingDown size={14} /> Hemat Hingga Rp 35.000.000
+              <TrendingDown size={14} /> Solusi Pendengaran Cerdas
             </motion.div>
             
             <h1 className="text-6xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-8">
-              Teknologi Premium, <br />
-              <span className="text-blue-600">Harga Jujur.</span>
+              Teknologi Global, <br />
+              <span className="text-blue-600">Harga Pabrik.</span>
             </h1>
             
             <p className="text-xl text-slate-500 mb-12 leading-relaxed max-w-xl">
-              Dapatkan alat bantu dengar kelas dunia dari Phonak & Oticon dengan harga 70% lebih murah dibanding Hearing Center. Kualitas profesional, tanpa biaya tambahan.
+              Dapatkan alat bantu dengar teknologi tinggi dengan harga yang jauh lebih terjangkau. Kualitas profesional dengan dukungan ahli pendengaran berpengalaman.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5 mb-12">
               <a href="#catalog" className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition-all shadow-[0_20px_40px_-10px_rgba(37,99,235,0.4)] flex items-center justify-center gap-2 group">
-                Lihat Katalog <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                Jelajahi Katalog <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a href={`https://wa.me/${whatsappNumber}`} className="bg-white text-slate-900 border-2 border-slate-100 px-10 py-5 rounded-2xl font-black text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                 <MessageCircle className="text-green-500" /> Konsultasi Gratis
@@ -56,7 +56,7 @@ export const Hero = ({ settings }: HeroProps) => {
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-slate-200 overflow-hidden">
-                    <img src={`https://i.pravatar.cc/150?u=${i}`} alt="User" />
+                    <img src={`https://i.pravatar.cc/150?u=${i + 10}`} alt="User" />
                   </div>
                 ))}
               </div>
@@ -64,7 +64,7 @@ export const Hero = ({ settings }: HeroProps) => {
                 <div className="flex text-amber-400 mb-1">
                   {[1, 2, 3, 4, 5].map((i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
-                <p className="text-sm font-bold text-slate-900">500+ Pengguna Puas</p>
+                <p className="text-sm font-bold text-slate-900">Dipercaya Ribuan Pengguna</p>
               </div>
             </div>
           </motion.div>
@@ -90,13 +90,13 @@ export const Hero = ({ settings }: HeroProps) => {
               >
                 <div className="flex justify-between items-end">
                   <div>
-                    <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Hearing Center</p>
-                    <p className="text-2xl line-through text-slate-300 font-bold">Rp 55.000.000</p>
+                    <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Harga Pasaran</p>
+                    <p className="text-2xl line-through text-slate-300 font-bold">Rp 45.000.000+</p>
                   </div>
                   <div className="text-right">
-                    <div className="inline-block bg-green-500 text-white text-[10px] font-black px-2 py-0.5 rounded mb-2">HEMAT 37JT</div>
+                    <div className="inline-block bg-green-500 text-white text-[10px] font-black px-2 py-0.5 rounded mb-2">HARGA TERBAIK</div>
                     <p className="text-blue-600 text-xs font-black uppercase tracking-widest mb-1">HearPremium</p>
-                    <p className="text-4xl text-slate-900 font-black">Rp 18.000.000</p>
+                    <p className="text-4xl text-slate-900 font-black">Rp 10jt - 18jt</p>
                   </div>
                 </div>
               </motion.div>
@@ -108,8 +108,8 @@ export const Hero = ({ settings }: HeroProps) => {
                   <ShieldCheck className="text-white" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Garansi Resmi</p>
-                  <p className="text-lg font-black text-slate-900">100% Original</p>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Kualitas Terjamin</p>
+                  <p className="text-lg font-black text-slate-900">Garansi Resmi</p>
                 </div>
               </div>
             </div>
